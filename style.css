@@ -18,23 +18,28 @@
     --Light-gray: hsl(0, 0%, 95%);
 }
 
-h3,h5,h6,p,figure{
-    margin: 0 !important;
-}
-
 body{
     background-color: var(--Light-gray) !important;
 }
 
-#modal-menu .modal-body, #modal-menu ul{
+h3,h5,h6,p,figure{
+    margin: 0 !important;
+}
+
+#modal-menu .modal-body,#modal-menu ul{
     padding: 0;
 }
 
 #modal-menu .btn-close{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
     color: var(--White) !important;
+}
+
+#modal-menu .modal-content .btn-close:hover{
+    cursor: pointer;
 }
 
 .modal ul{
@@ -42,7 +47,6 @@ body{
 }
 
 .modal ul li{
-    font-weight: 500;
     width: 100%;
     padding: 1rem;
 }
@@ -60,7 +64,7 @@ body{
     padding: 2rem 1rem;
 }
 
-.modal-title,h2,h3,h5{
+.modal ul li,.modal-title,h2,h3,h4,h5,h6{
     font-weight: 700 !important;
 }
 
@@ -85,6 +89,16 @@ body{
 .modal .articles-modal .row-articles{
     display: flex;
     align-items: center;
+}
+
+.modal .articles-modal .row-articles input{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.modal .articles-modal .articles-modal-prices{
+    color: var(--Moderate-cyan);
+    font-weight: 500;
 }
 
 .modal .articles-modal .row-articles input:checked{
@@ -216,16 +230,20 @@ article .row-infos{
     gap: 1rem;
 }
 
-article .row-infos h2{
+article .row-infos h2,.modal .articles-modal h4{
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 
-article .row-infos span{
+article .row-infos span,.modal .articles-modal span{
     font-size: .8rem;
     font-weight: 400;
     color: var(--Dark-gray);
+}
+
+.modal .articles-modal span{
+    font-size: 1rem;
 }
 
 button{
