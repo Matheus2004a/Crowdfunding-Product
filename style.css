@@ -26,6 +26,35 @@ body{
     background-color: var(--Light-gray) !important;
 }
 
+#modal-menu .modal-body, #modal-menu ul{
+    padding: 0;
+}
+
+#modal-menu .btn-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--White) !important;
+}
+
+.modal ul{
+    display: block;
+}
+
+.modal ul li{
+    font-weight: 500;
+    width: 100%;
+    padding: 1rem;
+}
+
+.modal ul li{
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.modal ul li:nth-last-child(1){
+    padding: 1rem 1rem 0;
+}
+
 #modal-support .modal-content,.modal-body{
     display: grid !important;
     padding: 2rem 1rem;
@@ -67,7 +96,7 @@ body{
     color: var(--Moderate-cyan);
 }
 
-.modal .modal-header,.modal .modal-footer,button{
+.modal ul li:nth-last-child(1),.modal .modal-header,.modal .modal-footer,button{
     border: none;
 }
 
@@ -105,6 +134,10 @@ header .menus .brand{
 
 .menus ul li{
     margin-left: 2rem;
+}
+
+.menus .button-menu{
+    background: transparent;
 }
 
 ul{
