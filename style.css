@@ -155,25 +155,18 @@ h2,h3,h5,h6,ul,p,figure{
     padding: 1rem 3rem;
 }
 
-.section-2{
-    place-items: center;
-}
-
-.section-2 .information h2,section .articles-section-3 h2{
-    font-size: 2rem;
-}
-
-.section-2 .information:nth-child(-n+2){
-    border-bottom: 1px solid var(--Light-gray-opacity);
-    line-height: 3rem;
-}
-
 #modal-support,.section-1,.section-2{
     text-align: center;
 }
 
 header{
-    position: relative;
+    background: url(./images/image-hero-mobile.jpg) center no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+
+.menus{
+    position: static;
     z-index: 10;
     padding: 1rem;
     justify-content: space-between !important;
@@ -184,13 +177,9 @@ header .menus .brand{
     font-size: 1.5rem;
 }
 
-header,ul{
+.menus,ul{
     display: flex;
     align-items: center;
-}
-
-.menus ul li{
-    margin-left: 2rem;
 }
 
 .menus .button-menu{
@@ -200,6 +189,8 @@ header,ul{
 ul{
     display: none;
     list-style: none;
+    gap: 3rem;
+    padding: 0 !important;
 }
 
 a{
@@ -213,12 +204,18 @@ figure .img-hero{
     bottom: 4.5rem;
 }
 
+.container{
+    display: flex;
+    place-content: center;
+    position: absolute;
+}
+
 main{
     display: grid;
     margin: 0 1.5rem;
     gap: 1.5rem;
-    position: absolute;
-    top: 15rem;
+    position: relative;
+    top: -4rem;
     z-index: 20;
 }
 
@@ -257,12 +254,30 @@ section button{
     background-color: var(--Moderate-cyan);
 }
 
-section .articles-section-3 :is(h5,span){
-    font-size: 1rem;
+.section-2{
+    place-items: center;
 }
 
-section .articles-section-3 p{
-    margin: 2rem 0 !important;
+.section-2 .information{
+    padding: 2rem 0;
+}
+
+.section-2 .information h2,section .articles-section-3 h2{
+    font-size: 2rem;
+}
+
+.section-2 .information:nth-child(-n+2){
+    border-bottom: 1px solid var(--Light-gray-opacity);
+    line-height: 3rem;
+}
+
+section .articles-section-3,article .row-infos{
+    display: grid;
+    gap: 2rem;
+}
+
+section .articles-section-3 :is(h5,span){
+    font-size: 1rem;
 }
 
 section .articles-section-3:last-child,.modal .articles-modal:last-child{
@@ -282,11 +297,6 @@ section .articles-section-3:last-child button{
 .section-1 .content-buttons button:first-child,article .row-infos button{
     width: 70%;
     font-weight: 500;
-}
-
-article .row-infos{
-    display: grid;
-    gap: 1rem;
 }
 
 article .row-infos h2,.modal .articles-modal h4{
@@ -334,15 +344,9 @@ button:hover:not(.button-menu,.btn-close){
     height: 2rem;
     right: 1rem;
     bottom: 1rem;
-    border-radius: 50%;
     background-color: var(--Moderate-cyan);
     transition: .5s;
     transform: translateY(100px);
-}
-
-.button-top-page:hover{
-    transform: scale(1.1);
-    opacity: .8;
 }
 
 .button-top-page.show-button{
@@ -350,9 +354,20 @@ button:hover:not(.button-menu,.btn-close){
 }
 
 @media (min-width: 820px){    
+    header{
+        background: url(./images/image-hero-desktop.jpg) center no-repeat;
+        height: 45vh;
+        background-size: cover;
+    }
+    
     main{
-        width: 60%;
-        top: 57rem;
+        width: 70%;
+        position: relative;
+        top: -5rem;
+    }
+
+    .menus{
+        padding: 2rem 5rem;
     }
 
     ul{
@@ -363,9 +378,22 @@ button:hover:not(.button-menu,.btn-close){
     .menus .button-menu{
         display: none;
     }
+    
+    section{
+        padding: 3rem;
+    }
 
-    .section-1 .content-buttons button:first-child{
+    section h3{
+        font-size: 1.2rem;
+    }
+
+    figure .img-hero{
+        height: 30rem;
+    }
+
+    .section-1 .content-buttons button:first-child,.articles-section-3 .row-infos button{
         width: 30%;
+        min-width: 10rem;
     }
 
     .content-buttons{
@@ -380,18 +408,6 @@ button:hover:not(.button-menu,.btn-close){
         border-radius: 2rem;
     }
 
-    section{
-        padding: 3rem;
-    }
-
-    section h3{
-        font-size: 1.2rem;
-    }
-
-    .section-2{
-        justify-content: flex-start;
-    }
-
     .section-2 .container-information{
         display: flex;
         gap: 2rem;
@@ -399,6 +415,7 @@ button:hover:not(.button-menu,.btn-close){
     
     .section-2 .information{
         display: grid;
+        width: max-content;
         padding: 0 3rem 0 0;
     }
 
@@ -411,9 +428,5 @@ button:hover:not(.button-menu,.btn-close){
         display: flex;
         justify-content: space-between;
         align-items: center;
-    }
-    
-    .articles-section-3 .row-infos button{
-        width: 30%;
     }
 }
