@@ -65,7 +65,7 @@ h2,h3,h5,h6,ul,p,figure{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,h2,h3,h4,h5,h6{
+.modal ul li,.modal-title,.button-bookmark + span,h2,h3,h4,h5,h6{
     font-weight: 700 !important;
 }
 
@@ -87,7 +87,7 @@ h2,h3,h5,h6,ul,p,figure{
     display: grid;
 }
 
-.modal .articles-modal .row-articles{
+.modal .articles-modal .row-articles,.container-btn-bookmark{
     display: flex;
     align-items: center;
 }
@@ -121,7 +121,7 @@ h2,h3,h5,h6,ul,p,figure{
     display: block;
 }
 
-.modal .articles-modal .row-articles input,.check-radio::after{
+.modal .articles-modal .row-articles input,.check-radio::after,.button-bookmark + span{
     display: none;
 }
 
@@ -324,7 +324,12 @@ button:hover:not(.button-menu,.btn-close){
     clip-path: circle();
 }
 
-@media (min-width: 820px){
+@media (min-width: 820px){    
+    main{
+        width: 60%;
+        top: 57rem;
+    }
+
     ul{
         display: inline-flex;
         color: var(--White);
@@ -340,5 +345,50 @@ button:hover:not(.button-menu,.btn-close){
 
     .content-buttons{
         justify-content: space-between;
+    }
+
+    .button-bookmark + span{
+        display: block;
+        padding: 1rem 1.5rem;
+        color: var(--Dark-gray);
+        background-color: var(--Light-gray);
+        border-radius: 2rem;
+    }
+
+    section{
+        padding: 3rem;
+    }
+
+    section h3{
+        font-size: 1.2rem;
+    }
+
+    .section-2{
+        justify-content: flex-start;
+    }
+
+    .section-2 .container-information{
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .section-2 .information{
+        display: grid;
+        padding: 0 3rem 0 0;
+    }
+
+    .section-2 .information:nth-child(-n+2){
+        border-right: 1px solid var(--Light-gray-opacity);
+        border-bottom: none;
+    }
+
+    .articles-section-3 .rows-articles,.articles-section-3 .row-infos{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .articles-section-3 .row-infos button{
+        width: 30%;
     }
 }
