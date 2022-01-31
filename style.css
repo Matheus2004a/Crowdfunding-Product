@@ -23,7 +23,7 @@ body{
     background-color: var(--Light-gray) !important;
 }
 
-h2,h3,h5,h6,p,figure{
+h2,h3,h5,h6,ul,p,figure{
     margin: 0 !important;
 }
 
@@ -172,6 +172,7 @@ header{
     position: relative;
     z-index: 10;
     padding: 1rem;
+    justify-content: space-between !important;
 }
 
 header .menus .brand{
@@ -179,11 +180,7 @@ header .menus .brand{
     font-size: 1.5rem;
 }
 
-.menus{
-    justify-content: space-between !important;
-}
-
-.menus,ul{
+header,ul{
     display: flex;
     align-items: center;
 }
@@ -264,7 +261,7 @@ section .articles-section-3 p{
     margin: 2rem 0 !important;
 }
 
-section .articles-section-3:last-child{
+section .articles-section-3:last-child,.modal .articles-modal:last-child{
     opacity: .5;
 }
 
@@ -309,9 +306,10 @@ button{
     color: var(--White);
     background-color: var(--Moderate-cyan);
     transition: .5s;
+    outline: none;
 }
 
-button:hover{
+button:hover:not(.button-menu,.btn-close){
     background-color: var(--Dark-cyan);
 }
 
@@ -324,4 +322,23 @@ button:hover{
     background: url(./images/icon-bookmark.svg) center no-repeat var(--Black);
     padding: 2rem;
     clip-path: circle();
+}
+
+@media (min-width: 820px){
+    ul{
+        display: inline-flex;
+        color: var(--White);
+    }
+
+    .menus .button-menu{
+        display: none;
+    }
+
+    .section-1 .content-buttons button:first-child{
+        width: 30%;
+    }
+
+    .content-buttons{
+        justify-content: space-between;
+    }
 }
