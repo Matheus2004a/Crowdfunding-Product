@@ -23,7 +23,7 @@ body{
     background-color: var(--Light-gray) !important;
 }
 
-h3,h5,h6,p,figure{
+h2,h3,h5,h6,p,figure{
     margin: 0 !important;
 }
 
@@ -125,7 +125,7 @@ h3,h5,h6,p,figure{
     display: none;
 }
 
-.modal .articles-modal .articles-modal-prices{
+.modal .articles-modal .articles-modal-prices,section .articles-section-3 span:nth-child(2){
     color: var(--Moderate-cyan);
     font-weight: 500;
 }
@@ -149,6 +149,19 @@ h3,h5,h6,p,figure{
 
 .modal-footer button{
     padding: 1rem 3rem;
+}
+
+.section-2{
+    place-items: center;
+}
+
+.section-2 .information h2,section .articles-section-3 h2{
+    font-size: 2rem;
+}
+
+.section-2 .information:nth-child(-n+2){
+    border-bottom: 1px solid var(--Light-gray-opacity);
+    line-height: 3rem;
 }
 
 #modal-support,.section-1,.section-2{
@@ -241,6 +254,22 @@ section button{
     left: 0;
     border-radius: 20px;
     background-color: var(--Moderate-cyan);
+}
+
+section .articles-section-3 :is(h5,span){
+    font-size: 1rem;
+}
+
+section .articles-section-3 p{
+    margin: 2rem 0 !important;
+}
+
+section .articles-section-3:last-child{
+    opacity: .5;
+}
+
+section .articles-section-3:last-child button{
+    background-color: var(--Dark-gray);
 }
 
 .section-1 img{
