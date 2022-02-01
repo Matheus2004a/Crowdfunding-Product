@@ -129,12 +129,27 @@ h2,h3,h5,h6,ul,p,figure{
     overflow-y: auto;
 }
 
+::-webkit-scrollbar{
+    width: .5rem;
+    height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--White);
+    border-radius: 0 .3rem .3rem 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--Light-gray);
+    border-radius: 20px;
+  }
+
 .modal .articles-modal .articles-modal-prices,section .articles-section-3 span:nth-child(2){
     color: var(--Moderate-cyan);
     font-weight: 500;
 }
 
-.modal .articles-modal .row-articles input:checked{
+.modal .articles-modal .row-articles input:checked,button:hover:not(.button-menu,.btn-close){
     background-color: var(--Dark-cyan);
 }
 
@@ -320,10 +335,6 @@ button{
     background-color: var(--Moderate-cyan);
     transition: .5s;
     outline: none;
-}
-
-button:hover:not(.button-menu,.btn-close){
-    background-color: var(--Dark-cyan);
 }
 
 .content-buttons{
