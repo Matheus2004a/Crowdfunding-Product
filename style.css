@@ -43,11 +43,15 @@ h2,h3,h5,h6,ul,p,figure{
     color: var(--White) !important;
 }
 
-#modal-menu .modal-content .btn-close:hover,.modal .articles-modal .row-articles input,.modal .articles-modal h6:hover,.container-btn-bookmark{
+#modal-menu .modal-content .btn-close:hover,.modal .articles-modal .row-articles input,.modal .articles-modal h6:hover,.container-btn-bookmark,.modal .articles-modal .row-articles .check-radio:hover{
     cursor: pointer;
 }
 
-.modal ul,.modal .articles-modal .row-articles input:checked + .check-radio::after{
+.modal .articles-modal .row-articles input{
+    display: none;
+}
+
+.modal ul,.modal .articles-modal .row-articles label.check-radio.checked{
     display: block;
 }
 
@@ -108,16 +112,29 @@ h2,h3,h5,h6,ul,p,figure{
     fill: var(--Dark-cyan);
 }
 
-.modal .articles-modal .row-articles :is(input,h6){
+.modal .articles-modal .row-articles :is(input,h6,.check-radio){
     transition: .3s;
 }
 
-.modal .articles-modal .row-articles input{
+.modal .articles-modal .row-articles .check-radio:hover{
+    border: 1px solid var(--Moderate-cyan);
+}
+
+.modal .articles-modal .row-articles .check-radio{
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
     border: 1px solid var(--Light-gray-opacity);
-    padding: 5px;
+    padding: 3px;
+}
+
+.modal .articles-modal .row-articles .check-radio::after{
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    border-radius: 50%;
+    background: var(--Moderate-cyan);
 }
 
 #modal-back-project .articles-modal.article-marked{
@@ -147,6 +164,10 @@ h2,h3,h5,h6,ul,p,figure{
 .modal .articles-modal .articles-modal-prices,section .articles-section-3 span:nth-child(2){
     color: var(--Moderate-cyan);
     font-weight: 500;
+}
+
+.modal .articles-modal .row-articles input,button{
+    outline: none;
 }
 
 .modal .articles-modal .row-articles input:checked,button:hover:not(.button-menu,.btn-close){
@@ -334,7 +355,6 @@ button{
     color: var(--White);
     background-color: var(--Moderate-cyan);
     transition: .5s;
-    outline: none;
 }
 
 .content-buttons{
