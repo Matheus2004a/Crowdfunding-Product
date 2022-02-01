@@ -14,7 +14,7 @@
 <body>
   <!-- Selection modal end -->
   <div class="modal fade" id="modal-back-project" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered container-fluid">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Back this project</h5>
@@ -23,22 +23,20 @@
         <div class="modal-body">
           <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
           <article class="articles-modal">
-            <div class="row-articles">
-              <label for="radio-group" name="radio-label">
-                <div class="check-radio"></div>
-              </label>
+            <input type="radio" name="radio" id="radio-trial-1">
+            <label for="radio-trial-1">
+              <div class="check-radio"></div>
               <h6>Pledge with no reward</h6>
-            </div>
+            </label>
             <p>Choose to support us without a reward if you simply believe in our project. As a backer,
               you will be signed up to receive product updates via email.</p>
           </article>
           <article class="articles-modal">
-            <div class="row-articles">
-              <label for="radio-label" name="radio-group">
-                <div class="check-radio"></div>
-              </label>
+            <input type="radio" name="radio" id="radio-trial-2">
+            <label for="radio-trial-2">
+              <div class="check-radio"></div>
               <h6>Bamboo Stand</h6>
-            </div>
+            </label>
             <p class="articles-modal-prices">Pledge $25 or more</p>
             <p>You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign,
               and
@@ -46,24 +44,22 @@
             <h4>101 <span>left</span></h4>
           </article>
           <article class="articles-modal">
-            <div class="row-articles">
-              <label for="radio-group">
-                <div class="check-radio"></div>
-              </label>
+            <input type="radio" name="radio" id="radio-trial-3">
+            <label for="radio-trial-3">
+              <div class="check-radio"></div>
               <h6>Black Edition Stand</h6>
-            </div>
+            </label>
             <p class="articles-modal-prices">Pledge $75 or more</p>
             <p>You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
               member list. Shipping is included.</p>
             <h4>64 <span>left</span></h4>
           </article>
           <article class="articles-modal">
-            <div class="row-articles">
-              <label for="radio-group">
-                <div class="check-radio"></div>
-              </label>
+            <input type="radio" name="radio" id="radio-trial-4">
+            <label for="radio-trial-4">
+              <div class="check-radio"></div>
               <h6>Mahogany Special Edition</h6>
-            </div>
+            </label>
             <p class="articles-modal-prices">Pledge $200 or more</p>
             <p>You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
               to our Backer member list. Shipping is included.</p>
@@ -96,10 +92,8 @@
   <div class="modal fade" id="modal-menu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
         <div class="modal-body">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           <nav>
             <ul>
               <li>About</li>
@@ -124,9 +118,11 @@
         <li>Get Started</li>
       </ul>
       <button data-bs-toggle="modal" data-bs-target="#modal-menu" class="button-menu">
-        <figure>
-          <img src="./images/icon-hamburger.svg" alt="icon-hamburger">
-        </figure>
+        <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg" class="menu-burguer">
+          <g fill="#FFF" fill-rule="evenodd">
+            <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
+          </g>
+        </svg>
       </button>
     </nav>
   </header>
