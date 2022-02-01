@@ -43,11 +43,11 @@ h2,h3,h5,h6,ul,p,figure{
     color: var(--White) !important;
 }
 
-#modal-menu .modal-content .btn-close:hover{
+#modal-menu .modal-content .btn-close:hover,.modal .articles-modal .row-articles input,.modal .articles-modal h6:hover,.container-btn-bookmark{
     cursor: pointer;
 }
 
-.modal ul{
+.modal ul,.modal .articles-modal .row-articles input:checked + .check-radio::after{
     display: block;
 }
 
@@ -69,7 +69,7 @@ h2,h3,h5,h6,ul,p,figure{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,.button-bookmark + span,h2,h3,h4,h5,h6{
+.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6{
     font-weight: 700 !important;
 }
 
@@ -77,7 +77,7 @@ h2,h3,h5,h6,ul,p,figure{
     gap: 1rem;
 }
 
-.modal-body p,section p{
+.modal-body p,section p,.container-btn-bookmark span{
     color: var(--Dark-gray);
 }
 
@@ -91,42 +91,42 @@ h2,h3,h5,h6,ul,p,figure{
     display: grid;
 }
 
-.modal .articles-modal .row-articles,.container-btn-bookmark{
+.modal .articles-modal .row-articles{
     display: flex;
-    align-items: center;
 }
 
-.modal .articles-modal .row-articles :is(label,h6){
+.container-btn-bookmark span{
+    padding: 1rem;
+    display: none;
+}
+
+.container-btn-bookmark span.marked{
+    color: var(--Dark-cyan);
+}
+
+.circle-btn-bookmark.marked{
+    fill: var(--Dark-cyan);
+}
+
+.modal .articles-modal .row-articles :is(input,h6){
     transition: .3s;
 }
 
-.modal .articles-modal .row-articles label{
+.modal .articles-modal .row-articles input{
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50%;
     border: 1px solid var(--Light-gray-opacity);
     padding: 5px;
-    cursor: pointer;
 }
 
-.modal .articles-modal .row-articles label:hover{
-    border: 1px solid var(--Moderate-cyan);
+#modal-back-project .articles-modal.article-marked{
+    border: 2px solid var(--Moderate-cyan);
 }
 
-.check-radio::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: var(--Moderate-cyan);
-}
-
-.modal .articles-modal .row-articles input:checked + .check-radio::after{
-    display: block;
-}
-
-.modal .articles-modal .row-articles input,.check-radio::after,.button-bookmark + span{
-    display: none;
+#modal-back-project .modal-content{
+    height: 80vh;
+    overflow-y: auto;
 }
 
 .modal .articles-modal .articles-modal-prices,section .articles-section-3 span:nth-child(2){
@@ -139,7 +139,6 @@ h2,h3,h5,h6,ul,p,figure{
 }
 
 .modal .articles-modal h6:hover{
-    cursor: pointer;
     color: var(--Moderate-cyan);
 }
 
@@ -182,7 +181,7 @@ header .menus .brand{
     align-items: center;
 }
 
-.menus .button-menu{
+.menus .button-menu,.container-btn-bookmark{
     background: transparent;
 }
 
@@ -288,7 +287,7 @@ section .articles-section-3:last-child button{
     background-color: var(--Dark-gray);
 }
 
-.section-1 img{
+.section-1 img:not(.img-bookmark){
     position: absolute;
     top: 0;
     transform: translate(-50%, -50%);
@@ -334,7 +333,6 @@ button:hover:not(.button-menu,.btn-close){
 
 .button-bookmark{
     background: url(./images/icon-bookmark.svg) center no-repeat var(--Black);
-    padding: 2rem;
     clip-path: circle();
 }
 
@@ -383,6 +381,17 @@ button:hover:not(.button-menu,.btn-close){
         padding: 3rem;
     }
 
+    .container-btn-bookmark{
+        display: flex;
+        align-items: center;
+        background-color: var(--Light-gray);
+        border-radius: 2rem;
+    }
+
+    .container-btn-bookmark span{
+        display: inline-flex;
+    }
+
     section h3{
         font-size: 1.2rem;
     }
@@ -398,14 +407,6 @@ button:hover:not(.button-menu,.btn-close){
 
     .content-buttons{
         justify-content: space-between;
-    }
-
-    .button-bookmark + span{
-        display: block;
-        padding: 1rem 1.5rem;
-        color: var(--Dark-gray);
-        background-color: var(--Light-gray);
-        border-radius: 2rem;
     }
 
     .section-2 .container-information{
