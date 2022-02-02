@@ -6,7 +6,7 @@ const articlesTrial = document.querySelectorAll(".articles-modal")
 inputsTrial.forEach((input, indexInput) => {
     input.addEventListener("click", () => {
         articlesTrial.forEach((article, indexArticle) => {
-            if (input.checked && input[indexInput] == article[indexArticle]) {
+            if (input.checked && article.getElementsByTagName("input")[0] === input) {
                 article.classList.add("check")
             } else {
                 article.classList.remove("check")
