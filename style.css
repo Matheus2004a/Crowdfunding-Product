@@ -46,7 +46,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     cursor: pointer;
 }
 
-.modal .articles-modal input,.container-btn-bookmark span{
+.modal .articles-modal input:not(input[type="number"]),.container-btn-bookmark span{
     display: none;
 }
 
@@ -67,7 +67,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6{
+.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number]{
     font-weight: 700 !important;
 }
 
@@ -138,6 +138,43 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
 
 #modal-back-project .modal-content{
     height: 80vh;
+}
+
+#modal-back-project .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--Light-gray-opacity);
+    padding: 2rem 0 0;
+}
+
+#modal-back-project .content div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number]::placeholder{
+    color: var(--Dark-gray);
+    opacity: .3;
+}
+
+#modal-back-project .content input{
+    border-radius: 20px;
+    padding: 10px;
+    text-indent: 15px;
+    outline: none;
+    border: 1px solid var(--Light-gray-opacity);
+    border-radius: 2rem;
+}
+
+#modal-back-project .content :is(input,button){
+    width: 35%;
+    padding: 1rem;
 }
 
 #modal-back-project .modal-body{
