@@ -46,25 +46,20 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     cursor: pointer;
 }
 
-.modal .articles-modal input{
+.modal .articles-modal input,.container-btn-bookmark span{
     display: none;
 }
 
-.modal ul,.modal .articles-modal label label.check-radio.checked{
+.modal ul,.modal .articles-modal input + label .check-radio::after{
     display: block;
 }
 
-.modal ul li{
+.modal ul li,.line-progress{
     width: 100%;
-    padding: 1rem;
 }
 
 .modal ul li{
     border-bottom: 1px solid var(--Light-gray-opacity);
-}
-
-.modal .modal-dialog{
-    width: 90%;
 }
 
 #modal-support .modal-content,.modal-body{
@@ -80,7 +75,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     gap: 1rem;
 }
 
-.modal-body p,section p,.container-btn-bookmark span{
+.modal-body p,section p,.container-btn-bookmark span,article .row-infos span,.modal .articles-modal span{
     color: var(--Dark-gray);
 }
 
@@ -94,9 +89,8 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     display: grid;
 }
 
-.container-btn-bookmark span{
+.modal ul li,.container-btn-bookmark span,.menus,section button{
     padding: 1rem;
-    display: none;
 }
 
 .container-btn-bookmark span.marked{
@@ -128,7 +122,6 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
 }
 
 .modal .articles-modal input + label .check-radio::after{
-    display: block;
     content: '';
     width: 1rem;
     height: 1rem;
@@ -208,13 +201,11 @@ header{
 .menus{
     position: static;
     z-index: 10;
-    padding: 1rem;
     justify-content: space-between !important;
 }
 
-header .menus .brand{
+header .menus a{
     color: var(--White);
-    font-size: 1.5rem;
 }
 
 .menus,ul{
@@ -235,13 +226,6 @@ ul{
 
 a{
     text-decoration: none !important;
-}
-
-figure .img-hero{
-    width: 100%;
-    z-index: 1;
-    position: relative;
-    bottom: 4.5rem;
 }
 
 .container{
@@ -267,17 +251,12 @@ section{
     padding: 2rem 1rem;
 }
 
-section button{
-    padding: 1rem;
-}
-
 .section-1{
     position: relative;
 }
 
 .line-progress{
     position: relative;
-    width: 100%;
     height: .8rem;
     border-radius: 20px;
     background-color: var(--Light-gray);
@@ -348,7 +327,6 @@ article .row-infos h2,.modal .articles-modal h4{
 article .row-infos span,.modal .articles-modal span{
     font-size: .8rem;
     font-weight: 400;
-    color: var(--Dark-gray);
 }
 
 .modal .articles-modal span{
@@ -393,7 +371,11 @@ button{
         height: 45vh;
         background-size: cover;
     }
-    
+
+    #modal-back-project .modal-dialog{
+        max-width: 43.75rem;
+    }
+
     main{
         width: 70%;
         position: relative;
@@ -430,10 +412,6 @@ button{
 
     section h3{
         font-size: 1.2rem;
-    }
-
-    figure .img-hero{
-        height: 30rem;
     }
 
     .section-1 .content-buttons button:first-child,.articles-section-3 .row-infos button{
