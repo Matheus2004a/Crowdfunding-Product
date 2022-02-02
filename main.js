@@ -6,23 +6,14 @@ const articlesTrial = document.querySelectorAll(".articles-modal")
 inputsTrial.forEach(input => {
     input.addEventListener("click", () => {
         articlesTrial.forEach(article => {
-            if (input.checked && article.getElementsByTagName("input")[0] === input) {
+            if (input.checked && article.querySelectorAll("input")[0] === input) {
                 article.classList.add("check")
 
                 let contentPrice = document.createElement("div")
                 contentPrice.classList.add("content")
-                contentPrice.innerHTML = "<span>Enter your pledge</span> <div><input type='number' placeholder='$ 0.00'> <button type='submit' data-bs-toggle='modal' data-bs-target='#modal-support'>Continue</button></div>"
+                contentPrice.innerHTML = `<span>Enter your pledge</span> <div><input type='number' placeholder='0.00'> <button type='submit' data-bs-toggle='modal' data-bs-target='#modal-support' class='button-continue' onclick='clearAllDataArticle()'>Continue</button></div>`
 
                 article.appendChild(contentPrice)
-
-                /* checkMoreContentAdd()
-
-                function checkMoreContentAdd() {
-                    if (article.classList.contains("content")) {
-                        document.querySelector(".content").style.display = "none"
-                    }
-                } */
-
             } else {
                 article.classList.remove("check")
             }
@@ -30,6 +21,18 @@ inputsTrial.forEach(input => {
     })
 })
 
+function clearAllDataArticle() {
+    inputsTrial.forEach(radio => {
+        radio.checked = false
+    })
+    let inputPrices = document.querySelectorAll(".content input")
+    inputPrices.forEach(price => {
+        price.value = ""
+    })
+    articlesTrial.forEach(article => {
+        article.classList.remove("check")
+    })
+}
 
 window.addEventListener("scroll", () => {
     scrollY >= 400 ? buttonTopPage.classList.add("show-button") : buttonTopPage.classList.remove("show-button")

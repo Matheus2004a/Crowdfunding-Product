@@ -67,7 +67,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number]{
+.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number],#modal-back-project .content div::before{
     font-weight: 700 !important;
 }
 
@@ -141,26 +141,25 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
 }
 
 #modal-back-project .content{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
     align-items: center;
+    grid-template-columns: 55% 60%;
     border-top: 1px solid var(--Light-gray-opacity);
     padding: 2rem 0 0;
-}
-
-#modal-back-project .content div{
-    display: flex;
-    gap: 1rem;
-    align-items: center;
 }
 
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input[type=number]::placeholder{
+input[type=number]::placeholder,#modal-back-project .content div::before{
     color: var(--Dark-gray);
     opacity: .3;
+}
+
+input[type=number]:focus{
+    border: 1px solid var(--Moderate-cyan) !important;
+    caret-color: var(--Moderate-cyan);
 }
 
 #modal-back-project .content input{
@@ -170,6 +169,20 @@ input[type=number]::placeholder{
     outline: none;
     border: 1px solid var(--Light-gray-opacity);
     border-radius: 2rem;
+    transition: .5s;
+}
+
+#modal-back-project .content div{
+    position: relative;
+    display: flex;
+    gap: 1rem;
+}
+
+#modal-back-project .content div::before{
+    content: "$";
+    position: absolute;
+    top: 17px;
+    left: 17px;
 }
 
 #modal-back-project .content :is(input,button){
@@ -179,6 +192,7 @@ input[type=number]::placeholder{
 
 #modal-back-project .modal-body{
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .modal .modal-body::-webkit-scrollbar{
@@ -201,7 +215,7 @@ input[type=number]::placeholder{
     font-weight: 500;
 }
 
-.modal .articles-modal label input,button{
+.modal .articles-modal input,button{
     outline: none;
 }
 
