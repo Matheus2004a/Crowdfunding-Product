@@ -35,6 +35,11 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 0;
 }
 
+#modal-menu .modal-content{
+    position: absolute;
+    top: 5rem;
+}
+
 #modal-menu .btn-close{
     position: absolute;
     top: 8px;
@@ -44,6 +49,10 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
 
 #modal-menu .modal-content .btn-close:hover,.modal .articles-modal label input,.modal .articles-modal h6:hover,.container-btn-bookmark,.modal .articles-modal label .check-radio:hover{
     cursor: pointer;
+}
+
+.modal .articles-modal button{
+    font-weight: 500;
 }
 
 .modal .articles-modal input:not(input[type="number"]),.container-btn-bookmark span{
@@ -142,10 +151,39 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
 
 #modal-back-project .content{
     display: grid;
-    align-items: center;
-    grid-template-columns: 55% 60%;
+    justify-items: center;
+    gap: 1rem;
     border-top: 1px solid var(--Light-gray-opacity);
     padding: 2rem 0 0;
+}
+
+#modal-back-project .content input{
+    border-radius: 20px;
+    padding: 10px;
+    text-indent: 25px;
+    outline: none;
+    border: 1px solid var(--Light-gray-opacity);
+    border-radius: 2rem;
+    transition: .5s;
+}
+
+#modal-back-project .content div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+#modal-back-project .content div::before{
+    content: "$";
+    position: absolute;
+    top: 17px;
+    left: 4rem;
+}
+
+#modal-back-project .content :is(input,button){
+    width: 35%;
+    padding: 1rem;
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -160,34 +198,6 @@ input[type=number]::placeholder,#modal-back-project .content div::before{
 input[type=number]:focus{
     border: 1px solid var(--Moderate-cyan) !important;
     caret-color: var(--Moderate-cyan);
-}
-
-#modal-back-project .content input{
-    border-radius: 20px;
-    padding: 10px;
-    text-indent: 15px;
-    outline: none;
-    border: 1px solid var(--Light-gray-opacity);
-    border-radius: 2rem;
-    transition: .5s;
-}
-
-#modal-back-project .content div{
-    position: relative;
-    display: flex;
-    gap: 1rem;
-}
-
-#modal-back-project .content div::before{
-    content: "$";
-    position: absolute;
-    top: 17px;
-    left: 17px;
-}
-
-#modal-back-project .content :is(input,button){
-    width: 35%;
-    padding: 1rem;
 }
 
 #modal-back-project .modal-body{
@@ -246,7 +256,7 @@ input[type=number]:focus{
 header{
     background: url(./images/image-hero-mobile.jpg) center no-repeat;
     background-size: cover;
-    height: 50vh;
+    height: 35vh;
 }
 
 .menus{
@@ -427,6 +437,12 @@ button{
         max-width: 43.75rem;
     }
 
+    #modal-back-project .content,.articles-section-3 .rows-articles,.articles-section-3 .row-infos{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     main{
         width: 70%;
         position: relative;
@@ -490,9 +506,11 @@ button{
         border-bottom: none;
     }
 
-    .articles-section-3 .rows-articles,.articles-section-3 .row-infos{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    #modal-back-project .content div{
+        justify-content: flex-end;
+    }
+
+    #modal-back-project .content div::before{
+        left: 7rem;
     }
 }
