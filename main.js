@@ -22,10 +22,10 @@ inputsTrial.forEach(input => {
                 let contentPrice = document.createElement("div")
                 contentPrice.classList.add("content")
                 contentPrice.innerHTML = `<span>Enter your pledge</span>
-                <form>
+                <div>
                     <input type="number" placeholder="0.00">
                     <button type="submit" class="button-continue" aria-label="Close" onclick="checkValueInputEmpty()">Continue</button>
-                </form>`
+                </div>`
                 article.appendChild(contentPrice)
             }
         })
@@ -39,11 +39,13 @@ function checkValueInputEmpty() {
         if (Number(item.value) === "" || Number(item.value) <= 0) {
             let error = document.createElement("span")
             error.innerHTML = "Please insert a value valid!"
+            item.focus()
             item.classList.add("error")
             modalProjectContent.appendChild(error)
         } else {
             item.classList.remove("error")
-            document.querySelectorAll("span")[1].style.display = "none"
+            document.querySelectorAll("span")[1].innerHTML = ""
+            modalProject.classList.remove("show")
         }
     })
 }

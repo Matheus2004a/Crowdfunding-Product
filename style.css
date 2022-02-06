@@ -77,7 +77,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number],#modal-back-project .content form::before{
+.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number],#modal-back-project .content div::before{
     font-weight: 700 !important;
 }
 
@@ -168,14 +168,14 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     transition: .5s;
 }
 
-#modal-back-project .content form{
+#modal-back-project .content div{
     position: relative;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-#modal-back-project .content form::before{
+#modal-back-project .content div::before{
     content: "$";
     position: absolute;
     top: 17px;
@@ -199,7 +199,7 @@ input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input[type=number]::placeholder,#modal-back-project .content form::before{
+input[type=number]::placeholder,#modal-back-project .content div::before{
     color: var(--Dark-gray);
     opacity: .3;
 }
@@ -529,11 +529,11 @@ button{
         border-bottom: none;
     }
 
-    #modal-back-project .content form{
+    #modal-back-project .content div{
         justify-content: flex-end;
     }
 
-    #modal-back-project .content form::before{
+    #modal-back-project .content div::before{
         left: 7rem;
     }
 }
