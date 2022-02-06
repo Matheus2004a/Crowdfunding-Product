@@ -17,6 +17,7 @@
     --Dark-gray: hsl(0, 0%, 48%);
     --Light-gray-opacity: hsl(0, 0%, 90%);
     --Light-gray: hsl(0, 0%, 95%);
+    --Red: hsl(0, 100%, 50%);
 }
 
 html{
@@ -51,7 +52,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     cursor: pointer;
 }
 
-.modal .articles-modal button{
+.modal .articles-modal button,#modal-support button{
     font-weight: 500;
 }
 
@@ -76,7 +77,7 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 2rem 1rem;
 }
 
-.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number],#modal-back-project .content div::before{
+.modal ul li,.modal-title,.container-btn-bookmark span,h2,h3,h4,h5,h6,input[type=number],#modal-back-project .content form::before{
     font-weight: 700 !important;
 }
 
@@ -167,14 +168,14 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     transition: .5s;
 }
 
-#modal-back-project .content div{
+#modal-back-project .content form{
     position: relative;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-#modal-back-project .content div::before{
+#modal-back-project .content form::before{
     content: "$";
     position: absolute;
     top: 17px;
@@ -186,11 +187,19 @@ h2,h3,h5,h6,ul,p,figure,.modal-content{
     padding: 1rem;
 }
 
+.modal .articles-modal input[type="number"].error{
+    border: 1px solid var(--Red) !important;
+}
+
+#modal-back-project .content span:last-child{
+    color: var(--Red);
+}
+
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input[type=number]::placeholder,#modal-back-project .content div::before{
+input[type=number]::placeholder,#modal-back-project .content form::before{
     color: var(--Dark-gray);
     opacity: .3;
 }
@@ -251,6 +260,20 @@ input[type=number]:focus{
 
 #modal-support,.section-1,.section-2{
     text-align: center;
+}
+
+.section-2.animate{
+    animation-name: opacity;
+    animation-duration: 3s;
+}
+
+@keyframes opacity {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 header{
@@ -506,11 +529,11 @@ button{
         border-bottom: none;
     }
 
-    #modal-back-project .content div{
+    #modal-back-project .content form{
         justify-content: flex-end;
     }
 
-    #modal-back-project .content div::before{
+    #modal-back-project .content form::before{
         left: 7rem;
     }
 }

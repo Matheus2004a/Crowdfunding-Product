@@ -18,7 +18,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Back this project</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearAllDataArticle()"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
@@ -71,7 +71,8 @@
   </div>
 
   <!-- Success modal start -->
-  <div class="modal fade" id="modal-support" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="modal-support" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <figure>
@@ -83,7 +84,7 @@
             an email once our campaign is completed.</p>
         </div>
         <div class="modal-footer">
-          <button data-bs-dismiss="modal">Got it!</button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#modal-support">Got it!</button>
         </div>
       </div>
     </div>
@@ -156,7 +157,7 @@
             <p>of $100,000 backed</p>
           </div>
           <div class="information">
-            <h2>5,007</h2>
+            <h2>5007</h2>
             <p>total backers</p>
           </div>
           <div class="information">
