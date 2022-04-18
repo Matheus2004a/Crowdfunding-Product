@@ -85,9 +85,11 @@ function closeModalSupport() {
     section2.classList.remove("animate")
 }
 
-window.addEventListener("scroll", () => {
-    scrollY >= 400 ? buttonTopPage.classList.add("show-button") : buttonTopPage.classList.remove("show-button")
-})
+window.addEventListener("scroll", showButton)
+
+function showButton() {
+    scrollY >= 400 ? buttonTopPage.classList.add("show") : buttonTopPage.classList.remove("show")
+}
 
 buttonBookMark.addEventListener("click", checkButtonBookmark)
 
