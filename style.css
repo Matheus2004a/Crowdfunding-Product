@@ -383,8 +383,9 @@ section .articles-section-3 :is(h5,span){
     font-size: 1rem;
 }
 
-section .articles-section-3:last-child,.modal .articles-modal:last-child{
+.modal .articles-modal:last-child,.articles-section-3:last-child{
     opacity: .5;
+    pointer-events: none;
 }
 
 section .articles-section-3:last-child button{
